@@ -1,0 +1,24 @@
+import { useState } from "react";
+import ComponentA from "./ComponentA";
+import ComponentB from "./ComponentB";
+
+function StatusToggle() {
+  const [status, setStatus] = useState(false);
+
+  const toggleStatus = () => {
+    setStatus(!status);
+  };
+
+  return (
+    <div>
+      <button onClick={toggleStatus}>
+        Toggle Status
+      </button>
+
+      {/* Conditional Rendering */}
+      {status ? <ComponentA /> : <ComponentB />}
+    </div>
+  );
+}
+
+export default StatusToggle;
